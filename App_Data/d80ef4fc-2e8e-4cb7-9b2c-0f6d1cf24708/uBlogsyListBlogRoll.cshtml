@@ -1,0 +1,46 @@
+﻿@{
+    /* RSS FEED */
+}  
+
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+@using uBlogsy.Web.Helpers
+
+@using System.Net
+@{
+    DynamicNode landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+
+    string[] links = landing.GetProperty("uBlogsyBlogLinks").Value.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+    int count = int.Parse(Parameter.ItemCount);
+    
+    <div class="uBlogsy_blogroll_container">
+      @*  <h2>Blog Roll</h2>*@
+            
+        <ul class="uBlogsy_blogroll">
+        
+            @foreach(var link in links){
+                if (link.Trim() == string.Empty){
+                    continue;
+                }
+                
+                RssReader reader = RssReader.CreateAndCache(link, new TimeSpan(0, 10, 0));
+
+                <li>
+                    <h2>@reader.Title</h2>
+                    <ul>
+                        @foreach (RssItem item in reader.Items.OrderByDescending(x => x.Date).Take(count))
+                        {
+                            <li><a href="@item.Link">@item.Title</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+} 
+
+
+

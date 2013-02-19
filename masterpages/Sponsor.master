@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderId="childContent" runat="server">
+		<div class="container">
+			<div class="row mainContent">
+				<div class="ninecol">
+                    <div class="leftCol">
+			<umbraco:Macro Alias="BreadcrumbNav" runat="server"></umbraco:Macro>
+			<img src='/ImageGen.ashx?image=<umbraco:Item field="logo" runat="server"></umbraco:Item>&width=200&height=100&Constrain=True' alt='<umbraco:Item field="photoText" runat="server"></umbraco:Item>' class="sponsorLogo"  />
+            <h2><umbraco:Item field="pageHeading" useIfEmpty="pageTitle" runat="server"></umbraco:Item></h2>
+			<umbraco:Item field="pageContent" runat="server"></umbraco:Item>
+			<p><strong>Visit website:</strong> <a href="" target="_blank"><umbraco:Item ID="Item1" field="siteLink" runat="server"></umbraco:Item></a></p>
+		    </div>
+				</div>
+				
+				<div class="threecol last">
+                <div class="rightCol">
+			
+			<umbraco:Macro Alias="SubNav" runat="server"></umbraco:Macro>
+			
+		</div>
+				</div>
+			
+			
+			</div>
+	</div>
+</asp:Content>

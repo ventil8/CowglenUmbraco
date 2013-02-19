@@ -1,0 +1,72 @@
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+@using uBlogsy.Web.Helpers
+@{
+    if (Model.NodeTypeAlias != "uBlogsyPost")
+    {
+        return;
+    }
+    
+    // get item count
+    int count = int.Parse(@Parameter.ItemCount);
+    if (count == -1)
+    {
+        count = int.MaxValue;
+    }
+
+    // can be uBlogsyPostTags, uBlogsyPostCategories, or empty string (gets both)
+    string relatedAlias = @Parameter.RelatedAlias;
+
+    // get number of items to match
+    int matchCount = int.Parse(@Parameter.MatchCount);
+
+    
+    // get all posts
+    DynamicNodeList postList = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyPost");
+    
+    // sort posts by date
+    var sorted = postList.Items
+                            .Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                            .OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value);
+
+    List<DynamicNode> nodes;
+    if (!string.IsNullOrEmpty(relatedAlias))
+    {
+        nodes = NodeHelper.GetRelatedPosts(Model.Id, relatedAlias, sorted, matchCount);
+    }
+    else
+    {
+        // get both tags and categories
+        List<DynamicNode> relatedByTags = NodeHelper.GetRelatedPosts(Model.Id, "uBlogsyPostTags", sorted, matchCount);
+        List<DynamicNode> relatedByCategories = NodeHelper.GetRelatedPosts(Model.Id, "uBlogsyPostCategories", sorted, matchCount);
+
+        nodes = new List<DynamicNode>();
+        nodes.AddRange(relatedByTags);
+        nodes.AddRange(relatedByCategories);
+
+        // get distinct, and order by date
+        nodes = nodes.Distinct().OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value).ToList();
+    }
+    
+     if (nodes.Count > 0)
+     {
+        <div class="uBlogsy_related_posts_container uBlogsy_bottom_border">
+            <h2>
+                Related posts</h2>
+            <ul class="uBlogsy_related">
+                @foreach (DynamicNode n in nodes.Take(count))
+                {
+                    <li>
+                        <a href="@n.Url">
+                            <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
+                        </a>
+                        - <span class="uBlogsy_post_date">@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>
+                
+                    </li>
+                }
+            </ul>
+        </div>
+     }
+}

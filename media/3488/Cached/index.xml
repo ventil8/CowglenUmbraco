@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>jd.jpg</originalFileName>
+    <size>41019</size>
+    <dateLastModified>Thu, 22 Nov 2012 23:30:40 GMT</dateLastModified>
+    <width>500</width>
+    <height>375</height>
+    <cachedImage>
+      <fileName>oaqyvt4r.jpeg</fileName>
+      <dateCreated>Thu, 22 Nov 2012 23:30:43 GMT</dateCreated>
+      <dateLastAccessed>Fri, 23 Nov 2012 20:42:23 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>90</compression>
+      <width>533</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

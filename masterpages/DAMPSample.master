@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+        <title>DAMP 2.0 Samples</title>
+
+        <style type="text/css">
+            *{ margin:0; padding:0; list-style:none; outline:none; }
+        </style>
+
+        <script language="javascript" type="text/javascript">
+            function Switch(show, hide) {
+                document.getElementById(show).style.display = "block";
+                document.getElementById(hide).style.display = "none";
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div>
+            <a href="javascript:Switch('razorSample', 'xsltSample')">Razor Sample</a> - <a href="javascript:Switch('xsltSample', 'razorSample')">XSLT Sample</a>
+        </div>
+
+        <div id="razorSample">
+            <h1>Razor</h1>
+            <umbraco:Macro Alias="DAMP-Razor" runat="server" />
+        </div>
+
+        <div id="xsltSample" style="display: none;">
+            <h1>XSLT</h1>
+            <umbraco:Macro Alias="DAMP-XSLT" runat="server" />
+        </div>
+
+    </body>
+</html>
+</asp:Content>

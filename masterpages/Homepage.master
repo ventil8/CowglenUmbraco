@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderId="childContent" runat="server">
+		
+        <div class="container">
+	        <div class="row hpnewswrapper">
+		
+		<div class="twelvecol last">
+        	<div id="slidorion">
+				<umbraco:Macro ItemCount="5" Alias="BlogNewsCarousel" runat="server"></umbraco:Macro>
+			</div>
+		</div>
+        
+	</div>
+        </div>
+        <div class="container">
+	        <div class="row mainContent">
+		<div class="fourcol">
+			<div class="panel">
+                <h2><umbraco:Item ID="Item4" field="panel1Title" recursive="true" runat="server" /></h2>
+                <div class="panelInner"><p><umbraco:Item ID="Item5" field="panel1Copy" recursive="true" runat="server" />...</p></div>
+                <div class="panelbtm"><a href="#" >Find our more</a></div>
+            </div>
+		</div>
+		<div class="fourcol">
+			<div class="panel">
+                <h2><umbraco:Item ID="Item6" field="panel2Title" recursive="true" runat="server" /></h2>
+                <div class="panelInner"><p><umbraco:Item ID="Item7" field="panel2Copy" recursive="true" runat="server" />...</p></div>
+                <div class="panelbtm"><a href="#" >Find our more</a></div>
+            </div>
+		</div>
+        <div class="fourcol last">
+			<div class="panel">
+                <h2>Fixtures 2004's</h2>
+                <div class="panelInner"><umbraco:Macro Alias="2004Fixtures" runat="server"></umbraco:Macro></div>
+                <div class="panelbtm"><a href="#" >View all fixtures</a></div>
+            </div>
+		</div>
+	</div>
+
+            <div class="row mainContent btm">
+		<div class="fourcol">
+			<div class="panel">
+                <h2>Fixtures 2006's</h2>
+                <div class="panelInner"><umbraco:Macro ID="Macro1" Alias="2006Fixtures" runat="server"></umbraco:Macro></div>
+                <div class="panelbtm"><a href="#" class="hplink" >View all fixtures</a></div>
+            </div>
+		</div>
+		<div class="fourcol">
+			<div class="panel">
+                <h2>Match Venue's</h2>
+                <div class="panelInner"><umbraco:Macro Alias="GetRandomVenue" runat="server"></umbraco:Macro></div>
+                <div class="panelbtm"><a href="#" >View all venues</a></div>
+            </div>
+		</div>
+        <div class="fourcol last">
+			<div class="panel">
+                <h2>Latest Tweets</h2>
+                <umbraco:Macro twitterUsername="CowglenSportsCl" noStatus="2" excludeReplies="1"  displayNativeRTs="0" displayMaps="0" zoom="" size="" mapType="" Alias="twitterStatus" runat="server"></umbraco:Macro>
+                <div class="panelbtm"><a href="https://twitter.com/CowglenSportsCl" data-show-count="false">Follow @CowglenSportsCl</a></div>
+<script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+            </div>
+		</div>
+	</div>
+        </div>
+        
+		
+</asp:Content>

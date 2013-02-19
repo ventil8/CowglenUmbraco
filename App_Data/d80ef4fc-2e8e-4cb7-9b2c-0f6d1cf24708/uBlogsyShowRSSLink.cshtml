@@ -1,0 +1,16 @@
+@using System.Linq
+@using System.Xml.Linq
+
+<div class="uBlogsy_rss_link_container uBlogsy_bottom_border">
+    <h2>
+        @{
+            // get landing page
+            var rss = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyRSS").First();
+    
+            <span>Subscribe</span><a href="@rss.Url" class="uBlogsy_feed"></a>    
+        }
+    </h2>
+ </div>
+
+
+

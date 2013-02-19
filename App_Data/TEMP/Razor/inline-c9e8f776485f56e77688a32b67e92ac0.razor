@@ -1,0 +1,2 @@
+﻿@{ var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+                            <a href="@landing.Url">@landing.uBlogsyContentTitle</a> }

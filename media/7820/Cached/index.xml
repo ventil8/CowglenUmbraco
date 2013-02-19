@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>train.jpg</originalFileName>
+    <size>346411</size>
+    <dateLastModified>Sun, 25 Nov 2012 23:25:46 GMT</dateLastModified>
+    <width>900</width>
+    <height>400</height>
+    <cachedImage>
+      <fileName>hn33wfvo.jpeg</fileName>
+      <dateCreated>Sun, 25 Nov 2012 23:26:55 GMT</dateCreated>
+      <dateLastAccessed>Mon, 26 Nov 2012 00:02:45 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>90</compression>
+      <width>675</width>
+      <height>300</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

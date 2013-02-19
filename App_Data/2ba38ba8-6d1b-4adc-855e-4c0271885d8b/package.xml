@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Berto.UltimatePicker.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Berto.UltimatePicker.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Berto Ultimate Picker</name>
+      <version>1.1</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://bertoultimatepicker.codeplex.com/</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Berto</name>
+      <website>http://bertoultimatepicker.codeplex.com/</website>
+    </author>
+    <readme><![CDATA[This is the umbraco's ultimate pickers with a really minor change. When you don't specify a Parent Id, it will assume the current Node Id as the parent Id.
+I find this usefull in a multi-language site.
+
+The code is the one in the umbraco's repository. 
+
+Kudo's to the Umbraco Developer Team and to Ron Brouwer with the Axendo Ultimate Picker XPath, from where I got the ideia.
+(http://our.umbraco.org/projects/backoffice-extensions/axendo-ultimate-picker-xpath)
+
+.Net Framework Version: 3.5 (C#)
+Tested on Umbraco: 4.5.2
+Developed in Visual Studio 2010]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes>
+    <DataType Name="Berto Ultimate Picker" Id="82758943-42ed-4953-8acb-c42fd4785983" Definition="34e20aa6-1a92-47da-a3c5-f06a7ec25697">
+      <PreValues>
+        <PreValue Id="52" Value="DropDownList|||True|Blog" />
+      </PreValues>
+    </DataType>
+  </DataTypes>
+</umbPackage>

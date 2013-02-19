@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>shapeimage_1.png</originalFileName>
+    <size>420915</size>
+    <dateLastModified>Sun, 25 Nov 2012 22:59:46 GMT</dateLastModified>
+    <width>619</width>
+    <height>300</height>
+    <cachedImage>
+      <fileName>gnejkxbd.png</fileName>
+      <dateCreated>Sun, 25 Nov 2012 22:59:49 GMT</dateCreated>
+      <dateLastAccessed>Tue, 27 Nov 2012 22:46:47 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>oxuo4qc5.png</fileName>
+      <dateCreated>Sun, 25 Nov 2012 23:01:04 GMT</dateCreated>
+      <dateLastAccessed>Sun, 25 Nov 2012 23:01:04 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>800</width>
+      <height>300</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

@@ -1,0 +1,122 @@
+﻿@{ /* Displays post items in list form: 
+    *   - year
+    *       - month
+    *           - post item
+    *           - post item
+    */}
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('#uBlogsy_post_archive .uBlogsy_year_name').click(function () {
+
+             // toggle months
+             $(this).siblings(".uBlogsy_months").toggle();
+             $(this).siblings(".uBlogsy_months").find('.uBlogsy_post-items').trigger('click');
+
+             return false;
+         });
+
+         $('#uBlogsy_post_archive .uBlogsy_month_name').click(function () {
+             // toggle months
+             $(this).siblings(".uBlogsy_post-items").toggle();
+             return false;
+         });
+
+         // expand current post item's month
+         var postItem = $('#uBlogsy_post_archive').find('a[href$="' + window.location.pathname + '"]');
+         if (postItem.length == 1) {
+             $(postItem).parents('#uBlogsy_post_archive .uBlogsy_post-items').show();
+             $(postItem).parents('#uBlogsy_post_archive .uBlogsy_months').show();
+         }
+         else {
+             // expand latest month
+             $(postItem).parents('#uBlogsy_post_archive .uBlogsy_months:eq(0)').show();
+         }
+
+         //$(postItem).parents('#uBlogsy_post_archive .uBlogsy_months:eq(0)').show();
+     });
+</script>
+
+
+
+@using System.Linq;
+@using umbraco.MacroEngines;
+@using uBlogsy.Web.Helpers;
+@using uBlogsy.Web.Extensions;
+@using umbraco.interfaces;
+@{   
+    string archiveClass = "uBlogsy_archive uBlogsy_bottom_border";
+    if (@Parameter.AltLayout == "1")
+    {
+        archiveClass += " uBlogsy_post_archive_alt";
+    }
+    
+    <div class="@archiveClass">  
+        <h2>
+            Archive</h2>
+        <div id="uBlogsy_post_archive">
+            @{
+                // get year folders
+                DynamicNodeList yearsList = @Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyFolderYear");
+
+                var years = yearsList.Items
+                                    .Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                                    .OrderByDescending(x => x.Name);
+    
+                <ul class="uBlogsy_years">
+                    @foreach (DynamicNode year in years)
+                    {
+                        // sort nodes by date
+                        var nodes = year.DescendantsOrSelf("uBlogsyPost")
+                                        .Items
+                                        .Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                                        .OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value)
+                                        .ToList();
+
+                        if (nodes.Count == 0)
+                        {
+                            continue;
+                        }
+
+                        // create a dictionary of months with nodes in each month
+                        var monthsSorted = NodeHelper.GetMonthSorted(nodes, "uBlogsyPostDate", false, true);
+
+                        string yearClass = "uBlogsy_year";
+
+                        if (year == years.First())
+                        {
+                            yearClass += " uBlogsy_year_first";
+                        }
+
+
+                        // render years-months-items
+                        <li class="@yearClass">
+                            <a class="uBlogsy_year_name" href="#"><span>@year.Name</span></a> @*render year name*@
+                            <ul class="uBlogsy_months">
+                                @foreach (var month in monthsSorted)
+                                {
+                                    // render months
+                                    <li class="uBlogsy_month">
+                                        <a class="uBlogsy_month_name" href="#"> <span>@month.Key</span> </a>@*render month name*@
+                                        <ul class="uBlogsy_post-items">
+                                            @foreach (var postItem in month.Value)
+                                            {
+                                                // post items in month
+                                                <li class="uBlogsy_post-item"> 
+                                                    <a href="@postItem.Url">
+                                                        <span class="uBlogsy_post_title">@postItem.GetProperty("uBlogsyContentTitle").Value</span>
+                                                        <span class="uBlogsy_post_date">- @postItem.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+}

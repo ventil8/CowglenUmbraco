@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <imageText>Hello, world!</imageText>
+    <cachedImage>
+      <fileName>tygmdmtd.gif</fileName>
+      <dateCreated>Thu, 15 Nov 2012 22:32:19 GMT</dateCreated>
+      <dateLastAccessed>Sun, 18 Nov 2012 15:58:09 GMT</dateLastAccessed>
+      <imageFormat>gif</imageFormat>
+      <width>800</width>
+      <height>600</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+      <antiAlias>True</antiAlias>
+      <fontName>Arial</fontName>
+      <fontSize>32</fontSize>
+      <lineHeight>-1</lineHeight>
+      <fontStyle>Regular</fontStyle>
+      <fontColor>#000000</fontColor>
+      <align>left</align>
+      <valign>middle</valign>
+    </cachedImage>
+    <cachedImage>
+      <fileName>lch2ozg5.gif</fileName>
+      <dateCreated>Thu, 22 Nov 2012 23:53:03 GMT</dateCreated>
+      <dateLastAccessed>Thu, 22 Nov 2012 23:53:17 GMT</dateLastAccessed>
+      <imageFormat>gif</imageFormat>
+      <width>120</width>
+      <height>100</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+      <antiAlias>True</antiAlias>
+      <fontName>Arial</fontName>
+      <fontSize>32</fontSize>
+      <lineHeight>-1</lineHeight>
+      <fontStyle>Regular</fontStyle>
+      <fontColor>#000000</fontColor>
+      <align>left</align>
+      <valign>middle</valign>
+    </cachedImage>
+    <cachedImage>
+      <fileName>goo5jatv.gif</fileName>
+      <dateCreated>Fri, 23 Nov 2012 23:07:41 GMT</dateCreated>
+      <dateLastAccessed>Sun, 25 Nov 2012 22:58:41 GMT</dateLastAccessed>
+      <imageFormat>gif</imageFormat>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+      <antiAlias>True</antiAlias>
+      <fontName>Arial</fontName>
+      <fontSize>32</fontSize>
+      <lineHeight>-1</lineHeight>
+      <fontStyle>Regular</fontStyle>
+      <fontColor>#000000</fontColor>
+      <align>left</align>
+      <valign>middle</valign>
+    </cachedImage>
+  </image>
+</imageIndex>

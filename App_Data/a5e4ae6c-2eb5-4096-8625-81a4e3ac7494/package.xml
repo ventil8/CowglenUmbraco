@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>DAMP.RazorModel.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>DAMP.RazorModel.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>DAMP Razor Model</name>
+      <version>1.2</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/backoffice-extensions/damp-razor-model</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Jeroen Breuer</name>
+      <website>http://our.umbraco.org/member/4297</website>
+    </author>
+    <readme><![CDATA[With the DAMP Razor Model it's easier to use DAMP in Razor. It can work with the xml or id's that DAMP saves. If you do Model.propertyName it will return a List of DAMP_Item-objects you can loop through.  It also has the following properties/methods:
+
+IsXml - Returns a boolean if the data is stored as xml.
+PropertyData - Returns a string with the raw data.
+DynamicMediaList - Returns all media items as a DynamicMediaList.
+Count - Returns how many media items are selected.
+First - Returns the first item from the List<DAMP_Item>
+Any - Returns a boolean to see if any items are selected.
+Xml - Returns all media items as DynamicXml.
+Skip(int) - Used for paging.
+Take(int) - Used for paging.
+
+Each DAMP_Item-object has the following properties: 
+
+Id - Returns the id of the media item.
+Name - Returns the name of the media item.
+Type - Returns the Media Type of the media item.
+File - Returns the url of the media item if it exists.
+Url - Also returns the url of the media item if it exists.
+Alt - Returns the alt property. If it doesn't exist it will return the name.
+Resized - Returns the resized property if it exists.
+Xml - Returns the current media item as DynamicXml.
+Children - Returns the children of this media item as List<DAMP_Item>
+Crops - Returns a DynamicDictionary with all the crops.
+TypedCrops - Returns the crops as a Dictionary<string, string>.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

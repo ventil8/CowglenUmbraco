@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderId="childContent" runat="server">
+  <div class="container">
+			<div class="row mainContent">
+				<div class="ninecol">
+                    <div class="leftCol">
+			<umbraco:Macro ID="Macro1" Alias="BreadcrumbNav" runat="server"></umbraco:Macro>
+        <h2><umbraco:Item runat="server" field="pageName"/></h2>
+    
+<form runat="server">
+    <umbraco:Macro runat="server" Alias="XSLTsearch"
+      macroAlias="XSLTsearch"
+      source="-1"
+      searchFields="@nodeName,metaKeywords,metaDescription,bodyText"
+      previewFields="bodyText,metaDescription"
+      previewType="beginning"
+      searchBoxLocation="bottom"
+      resultsPerPage="5"
+      previewChars="255"
+      showPageRange="0"
+      showOrdinals="0"
+      showScores="0"
+      showStats="1">
+    </umbraco:Macro>
+						</form>
+ </div>
+				</div>
+			
+			
+			</div>
+	</div>
+</asp:Content>

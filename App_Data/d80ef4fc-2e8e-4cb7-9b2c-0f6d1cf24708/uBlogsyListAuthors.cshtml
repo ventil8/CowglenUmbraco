@@ -1,0 +1,73 @@
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines;
+@using uBlogsy.Web.Extensions;
+@{
+    // get landing page
+    var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+    IEnumerable<string> authors;
+    
+    if (PageData.Count > 0)
+    {
+        DynamicNode d = new DynamicNode(PageData[0]);
+        <div class="uBlogsy_author">
+            @if (!string.IsNullOrEmpty(@d.GetProperty("uBlogsyPostAuthor").Value))
+            {
+                authors = @d.GetProperty("uBlogsyPostAuthor").Value.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).Distinct();
+
+                <span>Posted by</span> 
+                <span class="uBlogsy_author_name">
+                @foreach (var a in authors)
+                {
+                    if (a != authors.Last())
+                    {
+                        <a href="@landing.Url?author=@a.Trim()">@a</a><text>,</text>
+                    }
+                    else
+                    {
+                        <a href="@landing.Url?author=@a.Trim()">@a </a>
+                    }
+                }
+                </span> 
+            }
+            else
+            {
+                <span>Posted</span>
+            }
+            <span class="uBlogsy_post_time">at @d.GetProperty("uBlogsyPostDate").Value.FormatDateTime("HH:mm")</span>
+        </div>
+    }
+    else
+    {
+        // get all categories
+        List<string> allAuthors = new List<string>();
+        foreach (var n in Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyPost"))
+        {
+            allAuthors.AddRange(n.uBlogsyPostAuthor.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)); // take care of multiple author scenario
+        }
+
+        if (allAuthors.Count == 0)
+        {
+            return;
+        }
+
+        // get only distinct categories
+        authors = allAuthors.Select(x => x.Trim()).Distinct();
+        <div class="uBlogsy_authors_container uBlogsy_bottom_border">
+            <h2>
+                Authors</h2>
+            <ul class="uBlogsy_authors">
+                @*// display categories*@
+                @foreach (var c in authors)
+                {
+                    if (!string.IsNullOrEmpty(c.Trim()))
+                    {
+                        <li><a href="@landing.Url?author=@c.Trim()">@c</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+}
+
+    

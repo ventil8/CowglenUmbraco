@@ -1,0 +1,67 @@
+﻿@using uBlogsy.Web.Extensions;
+@using uBlogsy.Web.Helpers;
+@using umbraco.MacroEngines;
+@{
+    DynamicNode d;
+    
+    if (PageData.Count > 0){
+        d = new DynamicNode(PageData[0]);
+    }
+    else{
+        d = new DynamicNode(Model.Id);
+    }
+    
+    <div class="uBlogsy_post uBlogsy_bottom_border">
+        <h2 class="uBlogsy_post_date">@d.GetProperty("uBlogsyPostDate").Value.FormatDateTime("dddd MMMM d, yyyy")</h2>
+        <h3>
+            <a href="@d.Url"><span>@d.GetProperty("uBlogsyContentTitle")</span></a></h3>
+        <div class="uBlogsy_post_body">
+            @Html.Raw(d.GetProperty("uBlogsyContentBody").Value)
+        </div>
+        
+        @RenderPage("/macroScripts/uBlogsyListAuthors.cshtml", d.Id)
+
+        <div class="uBlogsy_comment_count">
+            @{
+                var comments = d.Descendants("uBlogsyComment")
+                                .Items.Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                                .ToList();
+
+                if (comments.Count == 0)
+                {
+                     <a href="@d.Url">0 Comments</a>
+                }
+                else
+                {
+                    string hash = comments.First().Url.Replace(comments.First().Parent.Url, string.Empty);
+                    string url = d.Url + "#!/" + hash;
+                    
+                    <a href="@url">@comments.Count Comments</a>
+                }
+            }
+            </div>
+
+        <div class="uBlogsy_tag_list"> @RenderPage("/macroScripts/uBlogsyListTags.cshtml", @d.Id) </div>
+        <div class="uBlogsy_category_list">  @RenderPage("/macroScripts/uBlogsyListCategories.cshtml", @d.Id) </div>
+
+        @if (Model.NodeTypeAlias == "uBlogsyPost"){
+            DynamicNode prev = NodeHelper.GetNextPost(d);
+            DynamicNode next = NodeHelper.GetPreviousPost(d);
+            
+            <div class="uBlogsy_next_prev">
+            
+                @if (prev != null){
+                    <a href="@prev.Url" class="uBlogsy_prev">Older Posts</a>
+                }
+
+            
+                @if (next != null)
+                {
+                    <a href="@next.Url" class="uBlogsy_next">Newer Posts</a>
+                }
+        
+            </div>
+            
+        }
+    </div>
+}

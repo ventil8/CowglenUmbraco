@@ -1,0 +1,61 @@
+﻿@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines;
+ 
+    @{
+        List<string> allCategories = new List<string>();
+        
+        // get landing page
+        var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+        
+        if (PageData.Count > 0)
+        {
+            DynamicNode d = new DynamicNode(PageData[0]);
+            var categories = d.GetProperty("uBlogsyPostCategories").Value.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            allCategories.AddRange(categories);
+            
+            if (allCategories.Count > 0){
+                <div>Categories : </div>
+            
+                <ul class="uBlogsy_categories">
+                    @foreach (var c in allCategories)
+                    {
+                        if (!string.IsNullOrEmpty(c.Trim()))
+                        {
+                            <li><a href="@landing.Url?category=@c">@c</a></li>
+                        }
+                    }    
+                </ul>
+            }
+        }
+        else
+        {
+            // get all categories
+            foreach (var n in Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyPost"))
+            {
+                allCategories.AddRange(n.uBlogsyPostCategories.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+            }
+
+            // get only distinct categories
+            IEnumerable<string> categories = allCategories.Distinct();
+            
+            if (categories.Count() > 0){
+                // display categories
+                <div class="uBlogsy_categories_container uBlogsy_bottom_border">
+                    <ul class="uBlogsy_categories">
+                        <h2>All Categories</h2>
+                    
+                        @foreach (var c in categories)
+                        {
+                            if (!string.IsNullOrEmpty(c.Trim()))
+                            {
+                                <li><a href="@landing.Url?category=@c">@c</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+        }
+    }
+
+    

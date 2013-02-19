@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+	<files>
+    <file><guid>d9e1e802-d2f1-4300-a22b-67e97c2ec515.dll</guid><orgPath>/bin</orgPath><orgName>Twitter4Umbraco.dll</orgName></file>
+    <file><guid>88d00f57-b528-459a-976a-2ef5f97995e6.xslt</guid><orgPath>/xslt</orgPath><orgName>TwitterSearch.xslt</orgName></file>
+    <file><guid>c0268c56-2fc0-4e4e-a445-8a12339ca0dc.xslt</guid><orgPath>/xslt</orgPath><orgName>TwitterStatus.xslt</orgName></file>
+  </files>
+	<info>
+		<package>
+			<name>Twitter for Umbraco</name>
+			<version>2.0</version>
+			<license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+			<url>http://twitter4umbraco.codeplex.com</url>
+			<requirements>
+				<major>4</major>
+				<minor>5</minor>
+				<patch>2</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>Warren Buckley, Lee Kelleher and Morten Bock</name>
+			<website>http://twitter4umbraco.codeplex.com/</website>
+		</author>
+		<readme>  <![CDATA[This allows you to display your recent tweets from twitter.com on your own website.<p><strong>In version 2.0</strong><br/>[Lee K] Added Twitter Search macro.<br/>[Lee K] Added .NET controls to embed tweets directly into your website (a la Blackbird Pie).<br/>[Warren B] Updated Twitter Status XSLT with new Twitter REST API to fix long load times<br/></p><p><strong>In version 1.6</strong><br/>Updated to the NEW twitter API and the functionality to enable displaying native RTs in the stream</p><p><strong>In Version 1.5</strong><br/>General tidy up of XSLT file and to verify support for Umbraco Version 4.5</p><p><strong>In Version 1.4</strong><br/>RegEx has been improved for multiple @replies, urls and hashtags automatically linked for you.<br/>The option to show a map for where the tweet was made from if data found in field in twitters XML.
+</p>]]></readme>
+	</info>
+	<DocumentTypes />
+	<Templates />
+	<Stylesheets />
+	<Macros>
+		<macro>
+			<name>Twitter Status</name>
+			<alias>twitterStatus</alias>
+			<scriptType></scriptType>
+			<scriptAssembly></scriptAssembly>
+			<xslt>twitterStatus.xslt</xslt>
+			<useInEditor>False</useInEditor>
+			<refreshRate>0</refreshRate>
+			<scriptingFile></scriptingFile>
+			<properties>
+				<property name="Twitter Username" alias="twitterUsername" show="True" propertyType="text" />
+				<property name="Number of Statuses" alias="noStatus" show="True" propertyType="number" />
+				<property name="Exclude @ Replies?" alias="excludeReplies" show="True" propertyType="bool" />
+				<property name="Display Native RTs?" alias="displayNativeRTs" show="True" propertyType="bool" />
+				<property name="Display Google Maps?" alias="displayMaps" show="True" propertyType="bool" />
+				<property name="Google Maps - Zoom Level (0-21)" alias="zoom" show="True" propertyType="number" />
+				<property name="Google Maps - Map Size (400x400)" alias="size" show="True" propertyType="text" />
+				<property name="Google Maps - Map Type (roadmap, satellite, terrain, hybrid)" alias="mapType" show="True" propertyType="text" />
+			</properties>
+		</macro>    
+		<macro>
+			<name>Twitter Search</name>
+			<alias>TwitterSearch</alias>
+			<scriptType></scriptType>
+			<scriptAssembly></scriptAssembly>
+			<xslt>TwitterSearch.xslt</xslt>
+			<useInEditor>False</useInEditor>
+			<refreshRate>0</refreshRate>
+			<scriptingFile></scriptingFile>
+			<properties>
+				<property name="Maximum Results to be displayed" alias="maxResults" show="True" propertyType="number" />
+				<property name="The url to the ATOM search results" alias="queryURI" show="True" propertyType="text" />
+			</properties>
+		</macro>
+	</Macros>
+	<DictionaryItems />
+	<Languages />
+	<DataTypes />
+	<control />
+	<Actions>
+		<Action runat="install" alias="addXsltExtension" assembly="Twitter4Umbraco" type="Twitter4Umbraco.XsltExtensions" extensionAlias="twitter.library" />
+	</Actions>
+</umbPackage>

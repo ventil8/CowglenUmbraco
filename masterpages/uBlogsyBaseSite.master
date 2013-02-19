@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/uBlogsyBase.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+    <!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+    <html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" dir="ltr">
+    <head>
+        <%--get title for browser--%>
+        <umbraco:Macro ID="Macro1" runat="server" Language="razor" Alias="uBlogsyBrowserTitle" />
+        <%--get meta title and description--%>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <umbraco:Macro ID="Macro5" runat="server" Alias="uBlogsySeoMeta" />
+        <script src="/scripts/jquery-1.6.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+        
+        <link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />
+
+        <!-- 1140px Grid styles for IE -->
+	    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	    <!-- The 1140px Grid - http://cssgrid.net/ -->
+	    <link rel="stylesheet" href="/css/1140.css" type="text/css" media="screen" />
+	
+	    <!-- Your styles -->
+	
+	    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="/css/slidorion.css" />
+	
+	    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	    <script type="text/javascript" src="/scripts/css3-mediaqueries.js"></script>
+
+	    <script type="text/javascript" src="/scripts/umbusiness.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+
+        <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+
+	    <script type="text/javascript" src="/js/script.js"></script>
+        <script type="text/javascript" src="/scripts/jquery.slidorion.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <asp:ContentPlaceHolder ID="Head" runat="server" />
+    </head>
+    <body>
+        <form id="uBlogsy_main_form" runat="server">
+        <div class="container topbarWrapper">
+	    <div class="row topbar">
+		    <div class="ninecol">
+			    <umbraco:Macro ID="Macro2" Alias="UtilNavigation" runat="server"></umbraco:Macro>
+		    </div>
+		    <div class="threecol last">
+               <div class="socialicons">
+				   Follow us on...
+                   <a href="https://twitter.com/CowglenSportsCl" target="_blank"><img alt="" src="../css/iconTwitters1.jpg" valign="absmiddle" alt="Click for the Cowglen Twitter" title="Click for the Cowglen Twitter" /></a>
+                   <a href="https://www.facebook.com/CowglenSportsClub" target="_blank"><img alt="" src="../css/iconFacebooks1.jpg" valign="absmiddle" alt="Click for the Cowglen Facebook" title="Click for the Cowglen Facebook" /></a>
+                   <a href="/news/cowglen-rss.aspx" target="_blank"><img alt="" src="../css/iconRsss1.jpg" valign="absmiddle" alt="Click for the site news RSS feed" title="Click for the site news RSS feed"  /></a>
+		       </div>
+            </div>
+	    </div>
+    </div>
+        <div class="siteWrapper">
+            <div class="container">
+	            <div class="row header">
+		<div class="eightcol">
+			 <img src='/ImageGen.ashx?image=<umbraco:Item field="siteLogo" runat="server" recursive="true"></umbraco:Item>&width=120&height=100&Constrain=True' alt='<umbraco:Item field="siteName" runat="server"></umbraco:Item>' class="mainLogo" valign="absmiddle"  />
+             <h1><umbraco:Item ID="Item1" field="siteName" recursive="true" runat="server" /></h1>
+		</div>
+		<div class="fourcol last">
+			<div class="search">
+              <%--search--%>
+            <umbraco:Macro ID="Macro7" Alias="uBlogsySearch" runat="server" />
+            </div>
+
+            
+		</div>
+       
+	</div>
+            </div>
+
+            <div class="container">
+	<div class="row menu">
+		<div class="twelvecol last">
+			<umbraco:Macro ID="Macro3" Alias="TopNavigation" runat="server"></umbraco:Macro>
+		</div>
+	</div>
+</div>
+
+            <div class="container">
+	<div class="row shadow">
+		<div class="twelvecol last">
+			
+		</div>
+	</div>
+</div>    
+
+            <div class="container">
+			    <div class="row mainContent">
+				    <div class="ninecol">
+                        <div class="leftCol">
+			            <h2>
+                        <%--get site name--%>
+                        <umbraco:Macro ID="Macro6" runat="server" Language="razor">@{ var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+                            <a href="@landing.Url">@landing.uBlogsyContentTitle</a> } </umbraco:Macro>
+                        </h2>
+                        <div id="uBlogsy_left_col">
+                    <asp:contentplaceholder id="LeftCol" runat="server" />
+                </div>
+		                </div>
+				    </div>
+				
+				    <div class="threecol last">
+                    <div class="rightCol">
+			            <div id="uBlogsy_right_col">
+                         
+                            
+
+                            <%--rss link--%>
+                            <umbraco:Macro ID="Macro8" Alias="uBlogsyShowRSSLink" runat="server" />
+                           
+
+                            <%--list of authors--%>
+                            <umbraco:Macro ID="Macro9" Alias="uBlogsyListAuthors" runat="server" />
+
+
+                            <%--list of categories--%>
+                            <umbraco:Macro ID="Macro10" Alias="uBlogsyListCategories" runat="server" />
+
+
+                            <%--the awesome tag cloud--%>
+                            <umbraco:Macro ID="Macro11" Alias="uBlogsyListTags" runat="server" ShowCount="0" />
+
+
+                            <%--list of related posts--%>
+                            <umbraco:Macro ID="Macro12" Alias="uBlogsyListRelatedPosts" ItemCount="5" MatchCount="1"
+                                RelatedAlias="" runat="server" />
+
+
+                            <%--list of latest posts--%>
+                            <umbraco:Macro ID="Macro14" Alias="uBlogsyListPosts" ItemCount="5" Small="1" runat="server" />
+
+
+                            <%--list of latest comments--%>
+                            <umbraco:Macro ID="Macro15" Alias="uBlogsyListComments" ItemCount="5" Small="1" runat="server" />
+
+
+                            <%--archive--%>
+                            <umbraco:Macro ID="Macro16" Alias="uBlogsyListPostArchive" runat="server" />
+
+
+                            <%--alternate archive layout --%>
+                            <%-- <umbraco:Macro Alias="uBlogsyListPostArchive" AltLayout="1" runat="server" />--%>
+
+
+                            <%--list blog roll --%>
+                            <umbraco:Macro ID="Macro17" Alias="uBlogsyListBlogRoll" runat="server" ItemCount="5" />
+                </div>
+			
+			
+		            </div>
+				</div>
+			
+			
+			    </div>
+	        </div>  
+
+            <div class="container">
+                <div class="row footerTop">
+		
+        <div class="twelvecol footershadow last">
+			
+		</div>
+	</div>
+	            <div class="row footer">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol sponsor">	
+			<img alt="" src="/images/pacifics1.jpg" /><img alt="" src="/images/bellas1.jpg" /><img alt="" src="/images/networkrails1.jpg" />
+		</div>
+        <div class="onecol last">
+		
+		</div>
+	</div>
+                <div class="row footer textmenu">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol">
+            <div class="footertext">
+			<umbraco:Macro ID="Macro4" Alias="footerNav" runat="server"></umbraco:Macro>
+            </div>
+		</div>
+        <div class="onecol last">
+			
+		</div>
+	</div>
+
+                <div class="row footer">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol">
+			<p><umbraco:Item ID="Item2" field="copyright" recursive="true" runat="server" /></p>
+            <p><umbraco:Item ID="Item3" field="developerdetails" recursive="true" runat="server" /></p>
+		</div>
+        <div class="onecol last">
+			
+		</div>
+	</div>
+            </div>    
+
+            
+        </div>
+        </form>
+    </body>
+    </html>
+</asp:Content>

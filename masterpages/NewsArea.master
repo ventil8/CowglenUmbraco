@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderId="childContent" runat="server">
+	<div class="container">
+			<div class="row mainContent">
+				<div class="ninecol">
+					<div class="leftCol">
+					<div class="article">
+						<umbraco:Macro Alias="BreadcrumbNav" runat="server"></umbraco:Macro>
+						<h2><umbraco:Item field="pageHeading" useIfEmpty="pageTitle" runat="server"></umbraco:Item></h2>
+						<umbraco:Item field="pageContent" runat="server"></umbraco:Item>
+						<umbraco:Macro Alias="NewsList" runat="server"></umbraco:Macro>
+					</div> <!-- /article -->
+					</div>
+				</div>
+				<div class="threecol last">
+					<div class="rightCol">
+					<umbraco:Macro Alias="SubNav" runat="server"></umbraco:Macro>
+					</div>
+				</div>
+			</div>
+	</div>	
+</asp:Content>

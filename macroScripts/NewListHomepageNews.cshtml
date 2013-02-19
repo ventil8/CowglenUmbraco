@@ -1,0 +1,67 @@
+﻿@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Common.Extensions
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic
+@{
+    const int ITEMS_PER_PAGE = 20; // for testing
+
+    // get item count
+    int count = int.Parse(@Parameter.ItemCount);
+
+    IEnumerable<DynamicNode> nodes;
+
+
+
+    var posts = PostService.Instance.GetPosts(Model.Id);
+    nodes = ((IEnumerable<DynamicNode>)posts).Take(count);
+        
+        
+       <div id="slider">
+               
+                
+                @foreach (DynamicNode n in nodes)
+                {
+
+
+                    int slidecount = @n.Index() + 1;
+                    string csstext = "slide" + slidecount;
+
+                    
+                    <div id='@csstext' class="slide">
+                          <a href="@n.Url">
+
+                          <img src="/imageGen.ashx?image=@n.GetProperty("blogmainImage").Value&width=900&height=400&Constrain=False" alt="@n.GetProperty("uBlogsyContentTitle").Value" title="@n.GetProperty("uBlogsyContentTitle").Value" />
+                          </a>
+                    
+                    
+                    </div>
+                }
+			</div>
+			
+			<div id="accordion">
+				
+				@foreach (DynamicNode n in nodes)
+    {
+                    <div class="link-header">
+                        <a href="@n.Url">
+                            <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
+                        </a>
+                        </div>
+						<div class="link-content">
+                            <span>@n.GetProperty("Summary").Value</span>
+                    	</div>
+                    
+    }
+					
+			</div>
+       
+  
+  
+   
+ }
+
+
+
+

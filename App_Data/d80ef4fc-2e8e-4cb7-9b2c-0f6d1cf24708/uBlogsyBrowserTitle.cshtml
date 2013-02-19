@@ -1,0 +1,9 @@
+@{
+    // get title of page
+    var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+    string title = landing.uBlogsyContentTitle;
+    if (Model.Id != landing.Id){
+        title += " : " + Model.uBlogsyContentTitle;
+    }
+    <title>@title</title>
+}

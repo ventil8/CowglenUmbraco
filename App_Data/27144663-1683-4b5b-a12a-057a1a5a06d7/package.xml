@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>DAMP-Razor.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>DAMP-Razor.cshtml</orgName>
+    </file>
+    <file>
+      <guid>DAMP-XSLT.xslt</guid>
+      <orgPath>/xslt</orgPath>
+      <orgName>DAMP-XSLT.xslt</orgName>
+    </file>
+    <file>
+      <guid>DAMP.Samples.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>DAMP.Samples.dll</orgName>
+    </file>
+    <file>
+      <guid>Chrysanthemum.jpg</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Chrysanthemum.jpg</orgName>
+    </file>
+    <file>
+      <guid>Digibiz_EN.pdf</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Digibiz_EN.pdf</orgName>
+    </file>
+    <file>
+      <guid>Digibiz_NL.pdf</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Digibiz_NL.pdf</orgName>
+    </file>
+    <file>
+      <guid>Hydrangeas.jpg</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Hydrangeas.jpg</orgName>
+    </file>
+    <file>
+      <guid>Installer.ascx</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Installer.ascx</orgName>
+    </file>
+    <file>
+      <guid>Jellyfish.jpg</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Jellyfish.jpg</orgName>
+    </file>
+    <file>
+      <guid>Penguins.jpg</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Penguins.jpg</orgName>
+    </file>
+    <file>
+      <guid>Tulips.jpg</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Tulips.jpg</orgName>
+    </file>
+    <file>
+      <guid>aee1142c-7f73-489a-8505-f09a9a0a8a38_Installer.ascx</guid>
+      <orgPath>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples</orgPath>
+      <orgName>Installer.ascx</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>DAMP 2.0 Samples</name>
+      <version>1.0</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/backoffice-extensions/digibiz-advanced-media-picker</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Jeroen Breuer</name>
+      <website>http://our.umbraco.org/member/4297</website>
+    </author>
+    <readme><![CDATA[This package adds some examples for the Digibiz Advanced Media Picker 2.0.
+
+The following things will be added:
+6 Data Types
+2 Macros
+2 Media Types
+1 Document Type
+1 Template
+10 Media items
+1 Node]]></readme>
+  </info>
+  <Documents>
+    <DocumentSet importMode="root">
+      <DAMPSample id="1310" parentID="-1" level="1" writerID="0" creatorID="0" nodeType="1059" template="1060" sortOrder="2" createDate="2011-09-30T17:49:17" updateDate="2011-09-30T18:00:03" nodeName="DAMP 2.0 Sample page" urlName="damp-20-sample-page" writerName="admin" creatorName="admin" path="-1,1310" isDoc="">
+        <dampFile><![CDATA[]]></dampFile>
+        <dampClassic />
+        <dampNewWide><![CDATA[]]></dampNewWide>
+        <dampNewLong><![CDATA[]]></dampNewLong>
+      </DAMPSample>
+    </DocumentSet>
+  </Documents>
+  <DocumentTypes>
+    <DocumentType>
+      <Info>
+        <Name>DAMP.Sample</Name>
+        <Alias>DAMPSample</Alias>
+        <Icon>folder.gif</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>
+        </Description>
+        <AllowedTemplates>
+          <Template>DAMPSample</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>DAMPSample</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>DAMP File</Name>
+          <Alias>dampFile</Alias>
+          <Type>ef94c406-9e83-4058-a780-0375624ba7ca</Type>
+          <Definition>5ede9b08-4e45-4926-bba8-387c96d53a90</Definition>
+          <Tab>Photos</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>DAMP Classic</Name>
+          <Alias>dampClassic</Alias>
+          <Type>ef94c406-9e83-4058-a780-0375624ba7ca</Type>
+          <Definition>5c1e59b4-7714-470e-9fbb-6fb764111b2d</Definition>
+          <Tab>Photos</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>DAMP New wide</Name>
+          <Alias>dampNewWide</Alias>
+          <Type>ef94c406-9e83-4058-a780-0375624ba7ca</Type>
+          <Definition>45caefd0-267b-43ed-a77f-c28f7bd7fd8f</Definition>
+          <Tab>Photos</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>DAMP New long</Name>
+          <Alias>dampNewLong</Alias>
+          <Type>ef94c406-9e83-4058-a780-0375624ba7ca</Type>
+          <Definition>9d690d35-7032-4576-a984-e96cf1a510d8</Definition>
+          <Tab>Photos</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>8</Id>
+          <Caption>Photos</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+  </DocumentTypes>
+  <Templates>
+    <Template>
+      <Name>DAMP.Sample</Name>
+      <Alias>DAMPSample</Alias>
+      <Design><![CDATA[<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+        <title>DAMP 2.0 Samples</title>
+
+        <style type="text/css">
+            *{ margin:0; padding:0; list-style:none; outline:none; }
+        </style>
+
+        <script language="javascript" type="text/javascript">
+            function Switch(show, hide) {
+                document.getElementById(show).style.display = "block";
+                document.getElementById(hide).style.display = "none";
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div>
+            <a href="javascript:Switch('razorSample', 'xsltSample')">Razor Sample</a> - <a href="javascript:Switch('xsltSample', 'razorSample')">XSLT Sample</a>
+        </div>
+
+        <div id="razorSample">
+            <h1>Razor</h1>
+            <umbraco:Macro Alias="DAMP-Razor" runat="server" />
+        </div>
+
+        <div id="xsltSample" style="display: none;">
+            <h1>XSLT</h1>
+            <umbraco:Macro Alias="DAMP-XSLT" runat="server" />
+        </div>
+
+    </body>
+</html>
+</asp:Content>]]></Design>
+    </Template>
+  </Templates>
+  <Stylesheets />
+  <Macros>
+    <macro>
+      <name>DAMP- Razor</name>
+      <alias>DAMP-Razor</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>False</useInEditor>
+      <refreshRate>0</refreshRate>
+      <scriptingFile>DAMP-Razor.cshtml</scriptingFile>
+      <properties />
+    </macro>
+    <macro>
+      <name>DAMP-XSLT</name>
+      <alias>DAMP-XSLT</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>DAMP-XSLT.xslt</xslt>
+      <useInEditor>False</useInEditor>
+      <refreshRate>0</refreshRate>
+      <scriptingFile>
+      </scriptingFile>
+      <properties />
+    </macro>
+  </Macros>
+  <DictionaryItems />
+  <Languages />
+  <DataTypes>
+    <DataType Name="Crop - Long sample" Id="7a2d436c-34c2-410f-898f-4a23b3d79f54" Definition="76f3ed01-6521-4972-8910-40f1b8ed8772">
+      <PreValues>
+        <PreValue Id="189" Value="umbracoFile,1,0|longCrop,200,550,1,RB" />
+      </PreValues>
+    </DataType>
+    <DataType Name="Crop - Wide sample" Id="7a2d436c-34c2-410f-898f-4a23b3d79f54" Definition="838a758b-f98b-4f27-a326-0fc89755d59b">
+      <PreValues>
+        <PreValue Id="145" Value="umbracoFile,1,0|wideCrop,700,400,1,LT" />
+      </PreValues>
+    </DataType>
+    <DataType Name="DAMP 2.0 - Classic sample" Id="ef94c406-9e83-4058-a780-0375624ba7ca" Definition="5c1e59b4-7714-470e-9fbb-6fb764111b2d">
+      <PreValues>
+        <PreValue Id="103" Value="id" />
+        <PreValue Id="105" Value="-1" />
+        <PreValue Id="108" Value="" />
+        <PreValue Id="113" Value="False" />
+        <PreValue Id="114" Value="-1" />
+        <PreValue Id="115" Value="-1" />
+        <PreValue Id="104" Value="picker" />
+        <PreValue Id="106" Value="" />
+        <PreValue Id="107" Value="False" />
+        <PreValue Id="112" Value="False" />
+        <PreValue Id="109" Value="1032" />
+        <PreValue Id="110" Value="1032" />
+        <PreValue Id="111" Value="1032" />
+        <PreValue Id="118" Value="140" />
+        <PreValue Id="119" Value="100" />
+        <PreValue Id="116" Value="" />
+        <PreValue Id="117" Value="" />
+        <PreValue Id="120" Value="False" />
+        <PreValue Id="121" Value="False" />
+        <PreValue Id="122" Value="False" />
+      </PreValues>
+    </DataType>
+    <DataType Name="DAMP 2.0 - File sample" Id="ef94c406-9e83-4058-a780-0375624ba7ca" Definition="5ede9b08-4e45-4926-bba8-387c96d53a90">
+      <PreValues>
+        <PreValue Id="146" Value="fullMedia" />
+        <PreValue Id="148" Value="-1" />
+        <PreValue Id="151" Value="pdf" />
+        <PreValue Id="156" Value="False" />
+        <PreValue Id="157" Value="" />
+        <PreValue Id="158" Value="" />
+        <PreValue Id="147" Value="picker" />
+        <PreValue Id="149" Value="" />
+        <PreValue Id="150" Value="False" />
+        <PreValue Id="155" Value="False" />
+        <PreValue Id="152" Value="1033" />
+        <PreValue Id="153" Value="1033" />
+        <PreValue Id="154" Value="1033" />
+        <PreValue Id="161" Value="" />
+        <PreValue Id="162" Value="" />
+        <PreValue Id="159" Value="" />
+        <PreValue Id="160" Value="" />
+        <PreValue Id="163" Value="False" />
+        <PreValue Id="164" Value="False" />
+        <PreValue Id="165" Value="False" />
+      </PreValues>
+    </DataType>
+    <DataType Name="DAMP 2.0 - New long sample" Id="ef94c406-9e83-4058-a780-0375624ba7ca" Definition="9d690d35-7032-4576-a984-e96cf1a510d8">
+      <PreValues>
+        <PreValue Id="168" Value="fullMedia" />
+        <PreValue Id="170" Value="" />
+        <PreValue Id="173" Value="jpeg,jpg,gif,bmp,png,tiff,tif" />
+        <PreValue Id="178" Value="True" />
+        <PreValue Id="179" Value="-1" />
+        <PreValue Id="180" Value="-1" />
+        <PreValue Id="169" Value="xpath" />
+        <PreValue Id="171" Value="/descendant::Folder[@nodeName='Long images']" />
+        <PreValue Id="172" Value="False" />
+        <PreValue Id="177" Value="False" />
+        <PreValue Id="174" Value="1299" />
+        <PreValue Id="175" Value="1299" />
+        <PreValue Id="176" Value="1299" />
+        <PreValue Id="183" Value="0" />
+        <PreValue Id="184" Value="100" />
+        <PreValue Id="181" Value="longImage" />
+        <PreValue Id="182" Value="longCrop" />
+        <PreValue Id="185" Value="False" />
+        <PreValue Id="186" Value="False" />
+        <PreValue Id="187" Value="False" />
+      </PreValues>
+    </DataType>
+    <DataType Name="DAMP 2.0 - New wide sample" Id="ef94c406-9e83-4058-a780-0375624ba7ca" Definition="45caefd0-267b-43ed-a77f-c28f7bd7fd8f">
+      <PreValues>
+        <PreValue Id="123" Value="fullMedia" />
+        <PreValue Id="125" Value="1303" />
+        <PreValue Id="128" Value="jpeg,jpg,gif,bmp,png,tiff,tif" />
+        <PreValue Id="133" Value="True" />
+        <PreValue Id="134" Value="-1" />
+        <PreValue Id="135" Value="-1" />
+        <PreValue Id="124" Value="picker" />
+        <PreValue Id="126" Value="" />
+        <PreValue Id="127" Value="False" />
+        <PreValue Id="132" Value="False" />
+        <PreValue Id="129" Value="1298" />
+        <PreValue Id="130" Value="1298" />
+        <PreValue Id="131" Value="1298" />
+        <PreValue Id="138" Value="130" />
+        <PreValue Id="139" Value="0" />
+        <PreValue Id="136" Value="wideImage" />
+        <PreValue Id="137" Value="wideCrop" />
+        <PreValue Id="140" Value="False" />
+        <PreValue Id="141" Value="False" />
+        <PreValue Id="142" Value="False" />
+      </PreValues>
+    </DataType>
+  </DataTypes>
+  <control>/umbraco/plugins/DigibizAdvancedMediaPicker/Samples/Installer.ascx</control>
+</umbPackage>

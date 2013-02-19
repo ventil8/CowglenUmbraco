@@ -1,0 +1,65 @@
+﻿@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+@using uBlogsy.Web.Helpers
+@{
+    
+    // get all posts
+    IEnumerable<DynamicNode> postList = new DynamicNode(Model.Id)
+                                    .AncestorOrSelf(1)
+                                    .DescendantsOrSelf("uBlogsyPost")
+                                    .Items
+                                    .Where(x => x.GetProperty("umbracoNaviHide").Value != "1");
+
+    // get item count
+    int count = int.Parse(@Parameter.ItemCount);
+
+    List<DynamicNode> nodes;
+
+    if (@Parameter.Small == "1")
+    {
+        nodes = postList.OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value)
+                        .Take(count)
+                        .ToList();
+        <div class="uBlogsy_posts_container uBlogsy_bottom_border">
+        <h2>
+            Latest posts</h2>
+            <ul>
+                @foreach (DynamicNode n in nodes)
+                {
+                    <li>
+                        <a href="@n.Url">
+                            <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
+                        </a>
+                       @* - <span>@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>*@
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        // get tag, category, or author from query string
+        var tag = Request.QueryString["tag"];
+        var category = Request.QueryString["category"];
+        var author = Request.QueryString["author"];
+        var searchTerm = Request.QueryString["search"];
+
+        nodes = NodeHelper.GetPosts(tag, category, author, searchTerm, postList).Take(count).ToList();
+        
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('.uBlogsy_content_body').hide();
+                });
+            </script>
+            <h3>@nodes.Count Results: </h3>
+        }
+         foreach (DynamicNode n in nodes)
+         {
+               @RenderPage("/macroScripts/uBlogsyShowPost.cshtml", n.Id)
+         }
+    }
+ }

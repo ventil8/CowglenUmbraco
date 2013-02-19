@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>DAMP.RazorModel.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>DAMP.RazorModel.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>DAMP Razor Model</name>
+      <version>1.1</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/backoffice-extensions/damp-razor-model</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Jeroen Breuer</name>
+      <website>http://our.umbraco.org/member/4297</website>
+    </author>
+    <readme><![CDATA[With the DAMP Razor Model it's easier to use DAMP in Razor. If you do Model.propertyName it will return a List of DAMP_Item-objects you can loop through. It also has the following properties:
+
+IsXml
+PropertyData
+DynamicMediaList
+First
+Count
+Xml
+
+Each DAMP_Item-object has the following properties:
+
+Id
+Name
+Type
+File
+Url
+Alt
+Resized
+Xml
+DynamicMedia
+Children
+Crops]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

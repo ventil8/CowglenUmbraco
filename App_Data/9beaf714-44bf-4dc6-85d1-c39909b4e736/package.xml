@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Axendo.Umb.UltimatePickerXPath.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Axendo.Umb.UltimatePickerXPath.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Axendo Ultimate Picker XPath</name>
+      <version>1.0</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>www.axendo.nl</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Axendo - Ron Brouwer</name>
+      <website>www.axendo.nl</website>
+    </author>
+    <readme><![CDATA[]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes>
+    <DataType Name="Axendo Ultimate Picker XPath" Id="432b103f-99b4-46fd-b9cf-4ad99f26dc92" Definition="87011350-0e2f-46cb-9081-466bff46771b">
+      <PreValues>
+        <PreValue Id="10" Value="AutoComplete|||False" />
+      </PreValues>
+    </DataType>
+  </DataTypes>
+</umbPackage>

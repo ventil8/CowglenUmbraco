@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DocumentType>
+  <Info>
+    <Name>Fixture</Name>
+    <Alias>Fixture</Alias>
+    <Icon>calendar-day.png</Icon>
+    <Thumbnail>folder.png</Thumbnail>
+    <Description></Description>
+    <Master>Textpage</Master>
+    <AllowedTemplates>
+      <Template>Fixture</Template>
+    </AllowedTemplates>
+    <DefaultTemplate>Fixture</DefaultTemplate>
+  </Info>
+  <Structure />
+  <GenericProperties>
+    <GenericProperty>
+      <Name>Age Group</Name>
+      <Alias>ageGroup</Alias>
+      <Type>a74ea9c9-8e18-4d2a-8cf6-73c6206c5da6</Type>
+      <Definition>2920263e-bad1-4c90-92a6-589060ed6272</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Home Team Score</Name>
+      <Alias>homeTeamScore</Alias>
+      <Type>1413afcb-d19a-4173-8e9a-68288d2a73b8</Type>
+      <Definition>2e6d3631-066e-44b8-aec4-96f09099b2b5</Definition>
+      <Tab>Post Event</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Away Team Score</Name>
+      <Alias>awayTeamScore</Alias>
+      <Type>1413afcb-d19a-4173-8e9a-68288d2a73b8</Type>
+      <Definition>2e6d3631-066e-44b8-aec4-96f09099b2b5</Definition>
+      <Tab>Post Event</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Start Date/Time</Name>
+      <Alias>eventStartDateTime</Alias>
+      <Type>b6fb1622-afa5-4bbf-a3cc-d9672a442222</Type>
+      <Definition>e4d66c0f-b935-4200-81f0-025f7256b89a</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>True</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>End Date/Time</Name>
+      <Alias>eventEndDateTime</Alias>
+      <Type>b6fb1622-afa5-4bbf-a3cc-d9672a442222</Type>
+      <Definition>e4d66c0f-b935-4200-81f0-025f7256b89a</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Away Team</Name>
+      <Alias>awayTeam</Alias>
+      <Type>a74ea9c9-8e18-4d2a-8cf6-73c6206c5da6</Type>
+      <Definition>53a1e281-7391-4fc4-b1ad-ac16dd7f3d06</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Home Team</Name>
+      <Alias>homeTeam</Alias>
+      <Type>a74ea9c9-8e18-4d2a-8cf6-73c6206c5da6</Type>
+      <Definition>53a1e281-7391-4fc4-b1ad-ac16dd7f3d06</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Location Name</Name>
+      <Alias>eventLocationName</Alias>
+      <Type>173a96ae-00ed-4a7c-9f76-4b53d4a0a1b9</Type>
+      <Definition>16c2c1a2-2c91-4aa5-a7a7-6c4ba0c12b17</Definition>
+      <Tab>Event Info</Tab>
+      <Mandatory>False</Mandatory>
+      <Validation></Validation>
+      <Description><![CDATA[]]></Description>
+    </GenericProperty>
+  </GenericProperties>
+  <Tabs>
+    <Tab>
+      <Id>26</Id>
+      <Caption>Event Info</Caption>
+    </Tab>
+    <Tab>
+      <Id>29</Id>
+      <Caption>Post Event</Caption>
+    </Tab>
+  </Tabs>
+</DocumentType>

@@ -1,0 +1,98 @@
+﻿@{
+    /* LISTS ALL RECENT COMMENTS */
+}  
+
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+   
+@{
+    // get item count
+    int count = int.Parse(@Parameter.ItemCount);
+    if (count == -1)
+    {
+        count = int.MaxValue;
+    }
+
+    // get list of comments
+    List<DynamicNode> nodes;
+
+    DynamicNode d = new DynamicNode(Model.Id);
+    if (Parameter.Small == "1")
+    {
+        // get all comments
+        nodes = d.AncestorOrSelf(1)
+                    .DescendantsOrSelf("uBlogsyComment")
+                    .Items
+                    .Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                    .OrderByDescending(x => x.GetProperty("uBlogsyPostDate"))
+                    .Take(count)
+                    .ToList();
+        
+        
+        // list comments in right panel
+        <div class="uBlogsy_comments_container uBlogsy_bottom_border">
+            <h2>
+                Latest comments</h2>
+            <ul>
+                @foreach (var c in nodes)
+                {
+                    string hash = c.Url.Replace(c.Parent.Url, string.Empty);
+                    string url = c.Parent.Parent.Url + "#!/" + hash;
+                
+                    <li>
+                        <a href="@url">By <span>@c.GetProperty("uBlogsyCommentName")</span> on <span>@c.Parent.Parent.GetProperty("uBlogsyContentTitle")</span></a>
+                       @* - <span> @c.CreateDate.ToString().FormatDateTimeOrdinal("d MMMM yyyy")</span>*@
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        // get comments for THIS post
+        nodes = d.DescendantsOrSelf("uBlogsyComment")
+                    .Items
+                    .Where(x => x.GetProperty("umbracoNaviHide").Value != "1")
+                    .OrderByDescending(x => x.GetProperty("uBlogsyPostDate"))
+                    .Take(count)
+                    .ToList();
+        
+        // list comments on post
+        <h4>
+            @nodes.Count Comments:</h4>
+        <div class="uBlogsy_comments">
+            @foreach (var c in nodes)
+            {
+                string commentClass = "";
+                if (c == nodes.Last())
+                {
+                    commentClass = "uBlogsy_comment uBlogsy_last";
+                }
+                else
+                {
+                    commentClass = "uBlogsy_comment uBlogsy_bottom_border";
+                }
+                string hash = c.Url.Replace(c.Parent.Url, string.Empty);
+                string url = c.Parent.Parent.Url + "#!/" + hash;
+                        
+                <div class="@commentClass">
+                    <div class="uBlogsy_comment_name">
+                        <a href="@url" name="!/@hash">@c.GetProperty("uBlogsyCommentName").Value</a> said...
+                    </div>
+                    <div class="uBlogsy_comment_message">
+                        @c.GetProperty("uBlogsyCommentMessage")</div>
+                    <div class="uBlogsy_comment_date">
+                        @c.CreateDate.ToString().FormatDateTime("MMMM d, yyyy HH:MM")</div>
+
+                    @if (@c.GetProperty("uBlogsyCommentWebsite").Value.Trim() != "http://")
+                    {
+                        <div class="uBlogsy_comment_website">
+                            <span>Website</span> : <a href="@c.GetProperty("uBlogsyCommentWebsite").Value">@c.GetProperty("uBlogsyCommentWebsite").Value </a> </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+}

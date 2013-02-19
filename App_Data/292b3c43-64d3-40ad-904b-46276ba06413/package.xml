@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Hammock.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Hammock.dll</orgName>
+    </file>
+    <file>
+      <guid>Sitereactor.FacebookMediaPicker.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Sitereactor.FacebookMediaPicker.dll</orgName>
+    </file>
+    <file>
+      <guid>[UMP]FacebookExample.xslt</guid>
+      <orgPath>/xslt</orgPath>
+      <orgName>[UMP]FacebookExample.xslt</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>[UMP] Sitereactor Facebook Provider</name>
+      <version>1.2</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/backoffice-extensions/universal-media-picker</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Morten Christensen</name>
+      <website>http://blog.sitereactor.dk</website>
+    </author>
+    <readme><![CDATA[Installs the Facebook Provider for the Universal Media Picker.
+
+NB: The Universal Media Picker (v1.5) must be installed for this package to work.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

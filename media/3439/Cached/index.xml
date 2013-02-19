@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>logo2.png</originalFileName>
+    <size>18642</size>
+    <dateLastModified>Thu, 22 Nov 2012 23:16:37 GMT</dateLastModified>
+    <width>403</width>
+    <height>407</height>
+    <cachedImage>
+      <fileName>2limr0wi.png</fileName>
+      <dateCreated>Thu, 22 Nov 2012 23:20:34 GMT</dateCreated>
+      <dateLastAccessed>Thu, 27 Dec 2012 15:32:14 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>99</width>
+      <height>100</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

@@ -1,0 +1,39 @@
+﻿@using uBlogsy.Web.Extensions;
+@using umbraco.MacroEngines;
+
+@{
+    DynamicNode d = new DynamicNode(Model.Id);
+    string desc = string.Empty;
+    string keywords = string.Empty;
+    
+    // get seo description
+    var temp = d.GetProperty("uBlogsySeoDescription");
+    if (temp != null)
+    {
+        desc = d.GetProperty("uBlogsySeoDescription").Value;
+    }
+
+
+    // get seo keywords
+    var temp2 = d.GetProperty("uBlogsySeoDescription");
+    if (temp2 != null)
+    {
+        keywords = d.GetProperty("uBlogsySeoKeywords").Value;
+    }
+
+    // use body when no description
+    if (string.IsNullOrEmpty(desc))
+    {
+        desc = d.GetProperty("uBlogsyContentBody").Value;
+    }
+
+    // use title when no keywords
+    if (string.IsNullOrEmpty(keywords))
+    {
+        keywords = d.GetProperty("uBlogsyContentTitle").Value;
+    }
+    
+    <meta name="keywords" content="@keywords.StripNonAphaNumeric().Trim()" />
+    <meta name="description" content="@desc.StripHtml().GetSummary(150).Trim()" />
+  
+}

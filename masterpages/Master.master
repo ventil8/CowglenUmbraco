@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title><umbraco:Item field="pageTitle" useIfEmpty="pageName" runat="server"></umbraco:Item></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="<umbraco:Item field='metaDescription' runat='server'></umbraco:Item>" />
+	<meta name="keywords" content="<umbraco:Item field='metaKeywords' runat='server'></umbraco:Item>" />
+	
+	
+	<!-- Your styles -->
+	<link rel="stylesheet" href="/css/slidorion.css" />
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="/css/1140.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
+	
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<script type="text/javascript" src="/scripts/css3-mediaqueries.js"></script>
+
+	<script type="text/javascript" src="/scripts/umbusiness.js"></script>
+    
+    
+
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+
+	
+    <script type="text/javascript" src="/scripts/jquery.slidorion.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+    <script>
+        $(function () {
+            $('#slidorion').slidorion();
+        });
+		
+		$(document).ready(function(){
+
+			 $(document).ready(function() {
+            $("#txtSearch").val("Search");
+            });
+        
+			$('#txtSearch').click(function(){
+            if ($(this).val() == 'Search'){
+                $(this).val(''); 
+            };
+        });
+
+         $('#txtSearch').blur(function(){
+            if ($(this).val() == ''){
+                $(this).val('Search'); 
+            };
+        });
+    });
+		
+	</script>
+	
+</head>
+<body>
+    <div class="container topbarWrapper">
+	    <div class="row topbar">
+		    <div class="ninecol">
+			    <umbraco:Macro ID="Macro2" Alias="UtilNavigation" runat="server"></umbraco:Macro>
+		    </div>
+		    <div class="threecol last">
+               <div class="socialicons">
+				   Follow us on...
+                   <a href="https://twitter.com/CowglenSportsCl" target="_blank"><img alt="" src="../css/iconTwitters1.jpg" valign="absmiddle" alt="Click for the Cowglen Twitter" title="Click for the Cowglen Twitter" /></a>
+                   <a href="https://www.facebook.com/CowglenSportsClub" target="_blank"><img alt="" src="../css/iconFacebooks1.jpg" valign="absmiddle" alt="Click for the Cowglen Facebook" title="Click for the Cowglen Facebook" /></a>
+                   <a href="/news/cowglen-rss.aspx" target="_blank"><img alt="" src="../css/iconRsss1.jpg" valign="absmiddle" alt="Click for the site news RSS feed" title="Click for the site news RSS feed"  /></a>
+		       </div>
+            </div>
+	    </div>
+    </div>
+    <div class="siteWrapper">
+
+    <div class="container">
+	<div class="row header">
+		<div class="eightcol">
+			 <img src='/ImageGen.ashx?image=<umbraco:Item field="siteLogo" runat="server" recursive="true"></umbraco:Item>&width=120&height=100&Constrain=True' alt='<umbraco:Item field="siteName" runat="server"></umbraco:Item>' class="mainLogo" valign="absmiddle"  />
+             <h1><umbraco:Item ID="Item1" field="siteName" recursive="true" runat="server" /></h1>
+		</div>
+		<div class="fourcol last">
+			<div class="search">
+            <form action="/search-cowglen-website.aspx" class="site_search" method="get">
+				<fieldset class="site_search">
+					<input type="text" name="search" id="txtSearch" class="searchbox" />
+					<input type="submit" value="GO" id="btnSearch" class="btnGo" />
+				</fieldset>	
+			</form>
+            </div>
+
+            
+		</div>
+       
+	</div>
+</div>
+
+    <div class="container">
+	<div class="row menu">
+		<div class="twelvecol last">
+			<umbraco:Macro ID="Macro1" Alias="TopNavigation" runat="server"></umbraco:Macro>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+	<div class="row shadow">
+		<div class="twelvecol last">
+			
+		</div>
+	</div>
+</div>
+
+    
+    <asp:ContentPlaceHolder Id="childContent" runat="server">
+			<!-- Insert default "childContent" markup here -->
+	</asp:ContentPlaceHolder>
+    
+
+    <div class="container">
+    <div class="row footerTop">
+		
+        <div class="twelvecol footershadow last">
+			
+		</div>
+	</div>
+	<div class="row footer">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol sponsor">	
+			<img alt="" src="/images/pacifics1.jpg" /><img alt="" src="/images/bellas1.jpg" /><img alt="" src="/images/networkrails1.jpg" />
+		</div>
+        <div class="onecol last">
+		
+		</div>
+	</div>
+
+
+    <div class="row footer textmenu">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol">
+            <div class="footertext">
+			<umbraco:Macro ID="Macro3" Alias="footerNav" runat="server"></umbraco:Macro>
+            </div>
+		</div>
+        <div class="onecol last">
+			
+		</div>
+	</div>
+
+    <div class="row footer">
+		<div class="onecol">
+			
+		</div>
+		<div class="tencol">
+			<p><umbraco:Item ID="Item2" field="copyright" recursive="true" runat="server" /></p>
+            <p><umbraco:Item ID="Item3" field="developerdetails" recursive="true" runat="server" /></p>
+		</div>
+        <div class="onecol last">
+			
+		</div>
+	</div>
+</div>
+
+    </div>
+
+
+</body>
+</html>
+</asp:Content>

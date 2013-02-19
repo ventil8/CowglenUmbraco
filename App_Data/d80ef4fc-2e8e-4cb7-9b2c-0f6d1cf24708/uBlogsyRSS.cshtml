@@ -1,0 +1,51 @@
+﻿@{
+    /* RSS FEED */
+}  
+
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+@{
+    // get all posts
+    DynamicNodeList postList = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyPost");
+    var posts = postList.Items.OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value);
+    
+    string lastPubDate;
+    if (posts.Count() == 0)
+    {
+        lastPubDate = DateTime.Now.ToString();
+    }
+    else
+    {
+        lastPubDate = posts.FirstOrDefault().GetProperty("uBlogsyPostDate").Value;
+    }
+    // get landing page
+    var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+    <rss version="2.0">
+        <channel>
+            <title>@landing.uBlogsyRssTitle</title>
+            <description>@landing.uBlogsyRssDescription</description>
+            <copyright>@landing.uBlogsyRssCopyright</copyright>
+            @*<image>@landing.uBlogsyRssImage</image>*@
+            <link>@Request.Url.Host@landing.Url 
+            </link>
+            <lastBuildDate>@lastPubDate.FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss")</lastBuildDate>
+            <pubDate>@lastPubDate.FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss")</pubDate>
+
+
+            @foreach (var p in posts)
+            {
+                    <item>
+                            <title>@p.GetProperty("uBlogsyContentTitle").Value</title>
+                            <author>@p.GetProperty("uBlogsyPostAuthor").Value</author>
+                            <comments>@p.Url</comments>
+                            <description>@p.GetProperty("uBlogsyContentBody").Value.StripHtml().Trim()</description>
+                            <link>@p.Url</link>
+                            <guid>@p.Url</guid>
+                            <pubDate>@p.GetProperty("uBlogsyPostDate").Value.FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss") </pubDate>
+                    </item>
+            }
+        </channel>
+    </rss>
+}

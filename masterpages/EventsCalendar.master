@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderId="childContent" runat="server">
+        <div class="container">
+	        <div class="row mainContent">
+                <div class="twelvecol last">
+					<div class="leftCol">
+			        <umbraco:Macro ID="Macro1" Alias="BreadcrumbNav" runat="server"></umbraco:Macro>
+			        <umbraco:Macro ID="Macro2" Alias="EventArea" runat="server"></umbraco:Macro>
+		     </div>
+		        </div>
+		        
+		    </div>
+        </div>
+		
+</asp:Content>

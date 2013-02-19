@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>shapeimage_1.png</originalFileName>
+    <size>420915</size>
+    <dateLastModified>Fri, 23 Nov 2012 20:45:27 GMT</dateLastModified>
+    <width>619</width>
+    <height>300</height>
+    <cachedImage>
+      <fileName>414w0j20.png</fileName>
+      <dateCreated>Fri, 23 Nov 2012 20:45:56 GMT</dateCreated>
+      <dateLastAccessed>Fri, 23 Nov 2012 22:21:43 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>800</width>
+      <height>388</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>enlrlcu0.png</fileName>
+      <dateCreated>Fri, 23 Nov 2012 22:22:14 GMT</dateCreated>
+      <dateLastAccessed>Fri, 23 Nov 2012 22:22:14 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>800</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>roctyaxz.png</fileName>
+      <dateCreated>Fri, 23 Nov 2012 22:23:01 GMT</dateCreated>
+      <dateLastAccessed>Sun, 25 Nov 2012 13:03:51 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>hevdqkjh.png</fileName>
+      <dateCreated>Sat, 24 Nov 2012 19:58:46 GMT</dateCreated>
+      <dateLastAccessed>Sat, 24 Nov 2012 19:59:33 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+      <align>left</align>
+      <valign>middle</valign>
+    </cachedImage>
+    <cachedImage>
+      <fileName>axy0vsei.png</fileName>
+      <dateCreated>Sat, 24 Nov 2012 19:59:14 GMT</dateCreated>
+      <dateLastAccessed>Sat, 24 Nov 2012 19:59:14 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>900</width>
+      <height>436</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+      <align>left</align>
+      <valign>middle</valign>
+    </cachedImage>
+  </image>
+</imageIndex>

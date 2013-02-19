@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>shapeimage_1.png</originalFileName>
+    <size>420915</size>
+    <dateLastModified>Thu, 22 Nov 2012 20:32:08 GMT</dateLastModified>
+    <width>619</width>
+    <height>300</height>
+    <cachedImage>
+      <fileName>t2yepqlu.png</fileName>
+      <dateCreated>Thu, 22 Nov 2012 23:14:10 GMT</dateCreated>
+      <dateLastAccessed>Fri, 23 Nov 2012 20:42:22 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <width>800</width>
+      <height>388</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

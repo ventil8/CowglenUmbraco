@@ -1,0 +1,36 @@
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Web.Extensions
+@using uBlogsy.Web.Helpers
+@{
+    // get all posts
+    var nodes = new DynamicNode(Model.Id)
+                        .AncestorOrSelf(1)
+                        .DescendantsOrSelf("uBlogsyPage")
+                        .Items
+                        .Where(x => x.GetProperty("umbracoNaviHide").Value != "1");
+    
+    var landing = Model.AncestorOrSelf(1).DescendantsOrSelf("uBlogsyLanding").First();
+    
+    <ul id="uBlogsy_nav">
+        @if (Request.Url.AbsolutePath == landing.Url){
+            <li><a href="@landing.Url" class="uBlogsy_current">Home</a></li>
+        }
+        else{
+            <li><a href="@landing.Url">Home</a></li>
+        }
+
+        @foreach (DynamicNode n in nodes)
+        {
+            if (Request.Url.AbsolutePath == n.Url)
+            {
+                <li><a href="@n.Url" class="uBlogsy_current">@n.GetProperty("uBlogsyContentTitle")</a></li>
+            }
+            else
+            {
+                <li><a href="@n.Url">@n.GetProperty("uBlogsyContentTitle")</a></li>
+            }
+        }
+    </ul>
+}

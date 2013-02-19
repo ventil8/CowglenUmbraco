@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>woodside.jpg</originalFileName>
+    <size>130308</size>
+    <dateLastModified>Sun, 25 Nov 2012 12:53:08 GMT</dateLastModified>
+    <width>1526</width>
+    <height>656</height>
+    <cachedImage>
+      <fileName>3s3ljnnf.jpeg</fileName>
+      <dateCreated>Sun, 25 Nov 2012 12:53:47 GMT</dateCreated>
+      <dateLastAccessed>Sun, 25 Nov 2012 13:03:51 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>90</compression>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

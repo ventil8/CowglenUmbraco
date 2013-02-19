@@ -1,0 +1,10 @@
+﻿@{
+       var last = @Model.Children.LastOrDefault();
+       if (last != null){
+          Response.Redirect(last.Url);
+       }
+       else{
+          var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+          Response.Redirect(landing.Url);
+       }
+    }

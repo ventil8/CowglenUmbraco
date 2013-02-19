@@ -1,0 +1,642 @@
+/* -------------------------------------------------------------- 
+	
+	screen.css
+	Screen stylesheet
+	by geckonewmedia.com
+	
+	TOC
+	----------------------------------
+	1. =RESET
+	2. =BASE_TYPOGRAPHY
+	3. =BASE_STYLES
+-------------------------------------------------------------- */
+ 
+
+/* -------------------------------------------------------------- 
+	=RESET
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body { 
+	line-height: 1.5; 
+}
+
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+a img { border: none; }
+
+/* -------------------------------------------------------------- 
+   =BASE
+-------------------------------------------------------------- */
+
+body {
+	background: #e5e5e5;
+	text-align: center;
+}
+
+div#page_container {
+	width: 960px;
+	text-align: left;
+	margin: 40px auto 0 auto;
+	background: white;
+	border: 1px solid #ccc;
+}
+
+
+div.article {
+	width: 730px;
+	padding: 15px;
+	float: left;
+}
+
+
+div.aside {
+	width: 200px;
+	padding: 0px;
+	float: left;
+}
+
+
+/* -------------------------------------------------------------- 
+	=HEADER & TOPNAV
+-------------------------------------------------------------- */
+
+div.header {
+	width: 100%;
+	position: relative;
+	height: 130px;
+}
+
+div.header form.site_search {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+
+div.header h1 {
+	font-size: 28px;
+	padding: 15px 15px 0 15px;
+        margin: 0;
+}
+
+div.header ul.nav {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #e3e3e3;
+	list-style: none;
+	float: left;
+	border: 1px solid #ccc;
+	border-left: none;
+	border-right: none;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+div.header ul.nav li {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+
+div.header ul.nav li a {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+	padding: 5px 15px;
+	background: #e3e3e3;
+	border-right: 1px solid #ccc;
+	text-decoration: none;
+}
+
+div.header ul.nav li a:hover {
+	background: #d3d3d3;
+}
+
+div.header ul.nav li.current a {
+	background: #d3d3d3;
+}    
+
+blockquote {
+	background: #e4e4e4;
+	padding: 10px;
+	font-style: italic;
+	line-height: 1.3;
+	border: 1px solid #ccc;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0px;
+}
+
+p.tagline {
+    font-style: italic;
+    margin: 0 0 0 0;
+    padding: 0 0 0 15px;
+}
+
+p.contact  {
+    padding: 0 0 0 15px;
+    font-size: 11px;
+}
+
+/* -------------------------------------------------------------- 
+	=SIDEBAR/SUBNAV
+-------------------------------------------------------------- */
+
+ul.subnav,
+ul.subnav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.subnav li {
+	display: block;
+	position: relative;
+}
+
+ul.subnav li a {
+	display: block;
+	text-decoration: none;
+	position: relative;
+	background: #e3e3e3;
+	border-bottom: 1px solid white;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+ul.subnav li a:hover {
+	background: #d3d3d3;
+}
+
+ul.subnav li li a {
+	padding-left: 20px;
+	font-size: 11px;
+}
+
+
+
+/* -------------------------------------------------------------- 
+	=FOOTER
+-------------------------------------------------------------- */
+
+div#page_footer {
+    width: 960px;
+    margin: 0 auto 20px auto; 
+}
+
+div#page_footer p {
+    margin: 0;
+    padding: 10px 0 30px 0;
+}
+
+
+p.footer_left {
+    width: 480px;
+    float: left;
+    text-align: left;
+}
+
+
+p.footer_right {
+    width: 480px;
+    float: left;
+    text-align: right;
+}
+
+
+/* -------------------------------------------------------------- 
+	=TYPOGRAPHY
+-------------------------------------------------------------- */
+
+
+body {
+	font-family: arial, verdana;
+}
+
+
+h1, h2, h3, h4, h5, h6  {
+	font-family: georgia, 'Times New Roman', serif;
+	margin: 1em 0 0.5em 0;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 32px;  
+}
+
+h3 {
+	font-size: 26px;  
+}
+
+h4 {
+	font-size: 20px;  
+}
+
+h5 {
+	font-size: 18px;  
+}
+
+h6 {
+	font-weight: bold;
+}
+
+.article ul,
+.article ol {
+	margin: 1em 0;
+	padding-left: 2em;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+
+
+/* -------------------------------------------------------------- 
+   =FORMS
+-------------------------------------------------------------- */
+
+
+div.form fieldset {
+
+}
+
+ul.form_fields {
+	margin: 15px 0;
+	padding: 0;
+	list-style: none;
+	font-size: 12px;
+}
+
+ul.form_fields li {
+	margin: 0 0 5px 0;
+	padding: 0;
+	clear: both;
+}
+
+ul.form_fields li label {
+	display: block;
+	float: left;
+	width: 90px;
+	padding: 5px;
+}
+
+ul.block_labels li label {
+	float: none;
+	padding: 0 0 3px 0;
+	font-weight: bold;
+}
+
+
+ul.form_fields li label.indented_label {
+	padding-left: 105px;
+}
+
+
+ul.form_fields li label.wide_label {
+	width: 100%;
+}
+
+
+input[type=text],
+textarea {
+	border:1px solid #dadada;
+	border-top-color: #999;    
+	padding: 5px;
+}
+
+input[type=text]:focus,
+textarea:focus {
+	border:1px solid #999;
+	border-top-color: #555; 
+	background-color: #fdffeb;
+}
+
+input.input_long { width: 260px; }
+input.input_short { width: 80px }
+
+ul.form_fields li select {
+	padding: 2px;
+	border:1px solid #dadada;
+}
+
+
+/* -------------------------------------------------------------- 
+   =NEWS
+-------------------------------------------------------------- */
+
+ul.news_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #ccc;
+}
+
+ul.news_list li {
+    margin: 0 0 0 0;
+    padding: 15px 0;
+    list-style: none;
+    clear: both;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+ul.news_list li.featured_news {
+    background: #f4f4f4;
+
+}
+
+div.news_image,
+div.main_news_image {
+    float: left;
+    width: 135px;
+}
+
+div.news_image img,
+div.main_news_image img {
+    width: 120px;
+    
+}
+
+div.news_content,
+div.main_news_item {
+    float: left;    
+    width: 595px;
+}
+
+ul.news_list h3 {
+    margin-top: 0px;
+}
+
+img.news_image {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+
+
+/* -------------------------------------------------------------- 
+   =EVENTS
+-------------------------------------------------------------- */
+
+div.event_main {
+    float: left;
+    width: 495px;
+    padding-right: 15px;
+}
+
+div.event_main h2 {
+    font-size: 22px;
+}
+
+div.event_nav {
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    font-size: 11px;
+    padding: 3px 0;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+
+div.event_nav p {
+    font-size: 11px;
+    float: left;
+    margin: 0;
+}
+
+div.event_nav a.next_month {
+    position: absolute;
+    right: 0px;
+    top: 4px;
+}
+
+div.event_nav a.previous_month {
+    position: absolute;
+    right: 65px;
+    top: 4px;
+}
+
+div.event_sidebar {
+    width: 220px;
+    float: left;
+}
+
+div.event_sidebar h5 {
+    padding: 2px 0 2px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+h5 a.previous_month span, 
+h5  a.next_month span {
+    display:none;
+}
+
+h5 a.previous_month,
+h5 a.next_month  {
+    width: 9px;
+    display: block;
+    float: left;
+    height: 13px;
+    margin-right: 4px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+h5 a.previous_month {
+    background-image: url(images/arrow_left.gif);
+}
+
+h5 a.next_month {
+    background-image: url(images/arrow_right.gif);
+}
+
+table.sm_calendar {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 220px;
+    font-size: 11px;
+}
+
+table.sm_calendar th,
+table.sm_calendar td {
+    padding: 2px;
+    border: 1px solid #e7e7e7;
+    text-align: center;
+    
+}
+
+table.sm_calendar td.eventDay {
+    background-color: #c6364a;
+    color: white;
+    font-weight: bold;
+    position: relative !important;
+    
+}
+
+div.events_today {
+    position: absolute;
+    background: #fff;
+    color: #000;
+    border: 1px solid #444;
+    z-index: 99999;
+    width: 200px;
+    text-align: left;
+    padding: 10px;
+    display: none;
+}
+
+div.events_today h6 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    background: url(images/calendar-day.png) left center no-repeat;
+    padding:1px 0 1px 18px;
+}
+
+table.sm_calendar th {
+    font-weight: bold;
+}
+
+p.ical_export {
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+p.ical_export a {
+    background: url(images/calendar-day.png) left center no-repeat;
+    padding:1px 0 1px 18px;
+}
+
+ul.events_list {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.events_list li {
+    clear: both;
+    margin: 0;
+    padding: 15px 0 0 0;
+    float: left;
+    width: 100%;
+}
+
+ul.events_list li p.event_date_cal {
+    width: 40px;
+    margin: 0 15px 0 0;
+    text-align: center;
+    border: 1px solid #999;
+    float: left;
+
+    -moz-box-shadow: 0px 0px 3px #c1c1c1;
+}
+
+span.event_date_cal_day {
+    display: block;
+    background: #ccc;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #999;
+}
+
+span.event_date_cal_month {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.events_list li h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+ul.events_list li p {
+    font-size: 12px;
+}
+
+
+
+/* -------------------------------------------------------------- 
+	=HOMEPAGE
+-------------------------------------------------------------- */
+
+div.homepage {
+    padding: 0 15px 15px 15px;
+}
+
+
+ul.home_news {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.home_news li {
+    clear: left;
+}
+
+ul.home_news li h3 {
+    font-size: 18px;
+    margin: 0 0 5px 0 ;
+}
+
+
+/* -------------------------------------------------------------- 
+   =MISC
+-------------------------------------------------------------- */
+
+div.clear {
+	clear: both;
+	height: 0px;
+	overflow:hidden;
+}
+
+.goright {
+	float: right;
+	margin-left: 10px;
+}
+
+.goleft {
+	float: left;
+	margin-right: 10px
+}
+
+
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

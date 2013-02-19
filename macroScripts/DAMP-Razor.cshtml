@@ -1,0 +1,65 @@
+@inherits umbraco.MacroEngines.DynamicNodeContext
+
+@{  
+    //DAMP File
+    //With DAMP Razor Model you can do .First to get the first available media item.
+    dynamic item1 = Model.dampFile.First;
+    
+    <h3 style="margin-top: 20px;">Razor DAMP file sample</h3>
+    <p>Download: <a href="@item1.File" target="_blank">@item1.Name</a></p>
+    
+    //DAMP Classic
+    //The DAMP Razor Model can also return all selected media items as a DynamicMediaList.
+    //This example get's the first item, but you also do a foreach on it.
+    dynamic item2 = Model.dampClassic.DynamicMediaList[0];
+    
+    <h3 style="margin-top: 20px;">Razor DAMP classic sample</h3>
+    <img src="@item2.umbracoFile" alt="@item2.nodeName" height="400px"/>
+    
+    <table>
+        <tr>
+            <td style="vertical-align: top; padding-right: 20px;">
+
+                @*DAMP New wide*@
+                @*You can always do a count on DAMP Razor Model. This is the only check required to see if any DAMP items are selected.*@
+                @if(Model.dampNewWide.Count > 0)
+                {
+                    <h3 style="margin-top: 20px;">Razor DAMP new wide sample</h3>
+                    <ul>
+                        @*The DAMP Razor Model returns a List<DAMP_Item> by default which you can loop through.*@
+                        @foreach (dynamic d in Model.dampNewWide)
+                        {
+                            <li>
+                                @*The DAMP_Item has many properties. It's easy to get a crop or alt field.*@
+                                @*The crop name needs to lowercased and will return the url of the crop.*@
+                                <img src="@d.Crops.widecrop" alt="@d.Alt"/>
+                            </li>
+                        }
+                    </ul>
+                }
+
+            </td>
+            <td  style="vertical-align: top;">
+
+                @*DAMP New long*@
+                <h3 style="margin-top: 20px;">Razor DAMP new long sample</h3>
+                <ul>
+                    @*You can also keep using your old code by calling .Xml. This will return DynamicXml.*@
+                    @foreach (dynamic d in Model.dampNewLong.Xml)
+                    {
+                        //Get the image (= MediaType ImageLong)
+                        var imageLong = d.ImageLong;
+
+                        //Get the crop (propertyName = longImage)
+                        var crop = imageLong.longImage;
+            
+                        <li>
+                            <img src="@crop.Find("@name", "longCrop").url" alt="@imageLong.nodeName"/>
+                        </li>
+                    }
+                </ul>
+
+            </td>
+        </tr>
+    </table>
+}

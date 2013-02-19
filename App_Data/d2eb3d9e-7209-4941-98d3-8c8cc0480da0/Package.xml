@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Universal Media Picker</name>
+      <version>1.5</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/backoffice-extensions/universal-media-picker</url>
+      <requirements>
+        <major>4</major>
+        <minor>5</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Matt Brailsford</name>
+      <website>blog.mattbrailsford.com</website>
+    </author>
+    <readme><![CDATA[Installs the core libraries and data types for the Universal Media Picker.
+NB: You must install one or more Universal Media Picker Providers to be able to use the Universal Media Picker.]]></readme>
+  </info>
+  
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  
+  <Actions>
+    <Action runat="install" alias="addApplicationTree" silent="false" initialize="false" sortOrder="0" applicationAlias="media" treeAlias="UniversalMediaPicker" treeTitle="Media" iconOpened="folder_o.gif" iconClosed="folder.gif" assemblyName="TheOutfield.UmbExt.UniversalMediaPicker" treeHandlerType="UniversalMediaPickerAppTree" action="" />
+  </Actions>
+  
+  <control>/umbraco/plugins/TheOutfield/UniversalMediaPicker/ProviderInstaller.ascx</control>
+  
+  <files><file><guid>b64c57c7-e322-41e5-b340-a96743e7160d.dll</guid><orgPath>/bin</orgPath><orgName>TheOutfield.UmbExt.UniversalMediaPicker.dll</orgName></file><file><guid>5b1aadc9-17df-461c-8ca5-ab497a685fd8.ascx</guid><orgPath>/umbraco/plugins/TheOutfield/UniversalMediaPicker</orgPath><orgName>ProviderInstaller.ascx</orgName></file><file><guid>6202e3a3-5232-4487-af07-f0937fd3e724.png</guid><orgPath>/umbraco/plugins/TheOutfield/UniversalMediaPicker</orgPath><orgName>ump.png</orgName></file><file><guid>2e6c8f6e-b5f7-4693-bcf0-0c7109882d7f.aspx</guid><orgPath>/umbraco/plugins/TheOutfield/UniversalMediaPicker</orgPath><orgName>UniversalMediaPicker.aspx</orgName></file><file><guid>d66c4f98-886b-47d5-bcbf-87c17c7c2c5e.aspx</guid><orgPath>/umbraco/plugins/TheOutfield/UniversalMediaPicker</orgPath><orgName>UniversalMediaPickerOauth.aspx</orgName></file></files>
+  
+</umbPackage>

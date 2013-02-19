@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>cowglen1.jpg</originalFileName>
+    <size>58277</size>
+    <dateLastModified>Sun, 25 Nov 2012 23:18:06 GMT</dateLastModified>
+    <width>800</width>
+    <height>400</height>
+    <cachedImage>
+      <fileName>fjefn1le.jpeg</fileName>
+      <dateCreated>Sun, 25 Nov 2012 23:18:09 GMT</dateCreated>
+      <dateLastAccessed>Thu, 27 Dec 2012 15:32:14 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>90</compression>
+      <width>900</width>
+      <height>400</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>False</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>mtc2aqux.jpeg</fileName>
+      <dateCreated>Sun, 25 Nov 2012 23:26:55 GMT</dateCreated>
+      <dateLastAccessed>Mon, 26 Nov 2012 00:02:45 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>90</compression>
+      <width>600</width>
+      <height>300</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

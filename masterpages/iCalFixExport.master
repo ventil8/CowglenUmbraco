@@ -1,0 +1,11 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gecko New Media/umbraco iCal Export//EN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:(GMT) Greenwich Mean Time . Dublin\, Edinburgh\, Lisbon\, London
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:VTIMEZONE
+<umbraco:Macro Alias="EventsIcalExportSingle" runat="server"></umbraco:Macro>END:VCALENDAR</asp:Content>
